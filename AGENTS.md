@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep `/` and `/login` sourced from Sparky, while `/workspace` is the authenticated AI Dash Bloom workspace; this preserves the requested three-page merge boundary.
