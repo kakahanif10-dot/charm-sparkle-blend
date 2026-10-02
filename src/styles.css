@@ -393,6 +393,11 @@
   --brand-soft: oklch(.925 .046 155);
 }
 .studio-shell {font-family:var(--font-sans); letter-spacing:0}
+.studio-shell :where(.sidebar-main,.conversation,.canvas,.code-editor){scrollbar-width:thin;scrollbar-color:var(--studio-border) var(--card)}
+.studio-shell :where(.sidebar-main,.conversation,.canvas,.code-editor)::-webkit-scrollbar{width:5px;height:5px}
+.studio-shell :where(.sidebar-main,.conversation,.canvas,.code-editor)::-webkit-scrollbar-track{background:var(--card)}
+.studio-shell :where(.sidebar-main,.conversation,.canvas,.code-editor)::-webkit-scrollbar-thumb{background:var(--studio-border);border:0;border-radius:999px}
+.studio-shell :where(.sidebar-main,.conversation,.canvas,.code-editor)::-webkit-scrollbar-thumb:hover{background:var(--muted-foreground)}
 button,textarea{font:inherit}
 .studio-shell{height:100dvh;min-height:560px;display:flex;overflow:hidden;background:var(--background);color:var(--foreground)}
 .studio-sidebar{width:232px;flex:none;display:flex;flex-direction:column;border-right:1px solid var(--studio-border);background:var(--background);transition:width .2s}
