@@ -50,7 +50,7 @@ function Workspace() {
   const chatEnd = useRef<HTMLDivElement>(null)
   const [iframeKey, setIframeKey] = useState(0)
 
-  useEffect(() => { const saved = readDrafts(); setDrafts(saved); if (saved.length) { const first = saved[0]; setActiveId(first.id); setHtml(first.html); setTitle(first.title); setMessages(first.messages || []) } setReady(true) }, [])
+  useEffect(() => { const saved = readDrafts(); setDrafts(saved); const first = saved[0]; if (first) { setActiveId(first.id); setHtml(first.html); setTitle(first.title); setMessages(first.messages || []) } setReady(true) }, [])
   useEffect(() => { if (ready) { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(drafts)) } catch { setError('Browser storage is full. Your latest changes may not be saved.') } } }, [drafts, ready])
   useEffect(() => { chatEnd.current?.scrollIntoView({ behavior: 'smooth' }) }, [messages, busy])
   const activeDraft = useMemo(() => drafts.find(d => d.id === activeId), [drafts, activeId])
